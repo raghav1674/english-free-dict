@@ -19,6 +19,7 @@ def search():
     query = request.args.get('q')
     if global_dict.find(query):
         return jsonify({query:dictionary[query]})
+    return jsonify({query:'word not found'})
 
 @app.route('/suggestions',methods=['GET'])
 def suggest():
